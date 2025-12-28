@@ -85,7 +85,7 @@ print(count_paths_3d(20, 30, 20))
 def count_advanced_ways(n, broken_steps):
     def calc_ways(n, stamina):
         if n in broken_steps: # enough to handle broken steps
-            return 0
+            return 0 
         elif n in calculateds: # base case
             return calculateds[n]
         elif stamina:   # handle stamina 
