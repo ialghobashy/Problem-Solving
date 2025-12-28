@@ -53,3 +53,26 @@ This repo contains problem solving practice. In this README file there will be n
 * *Task:* Write a function count_advanced_ways(n, broken_steps).
 * *Hint:* You may need to track more than just your current step number in your function arguments to keep track of your "history."
 
+
+### The Alternating Partition Problem
+
+*Problem:* You are given a target integer . You need to find the number of ways to represent  as a sum of positive integers, but with a strict *Parity Constraint*:
+
+* You can use any positive integer  ().
+* Each number in your sum must have a *different parity* (even/odd) than the number that came immediately before it.
+
+*Example for :*
+
+* [5] (Valid: just one number)
+* [1, 4] (Valid: Odd, then Even)
+* [4, 1] (Valid: Even, then Odd)
+* [2, 3] (Valid: Even, then Odd)
+* [3, 2] (Valid: Odd, then Even)
+* [1, 2, 2] (*Invalid*: Contains two even numbers in a row)
+* [2, 1, 2] (Valid: Even, Odd, Even)
+
+*Task:* Write a function count_alternating_sums(n).
+
+*The Challenge:* 1.  *Infinite Choices:* Unlike the staircase where you have 2 choices (1 or 2 steps), here at any point, you could technically pick any number .
+2.  *State Tracking:* A standard recursive function f(n) isn't enough. The function needs to know the parity of the last number used to determine which numbers are allowed next.
+3.  *Base Case Complexity:* Students must carefully define what happens when the remaining sum becomes  versus when it becomes negative or "stuck" (where no valid parity can be chosen to reach zero).
